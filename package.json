@@ -19,7 +19,8 @@
     "gatsby": "^5.13.7",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "csv-loader": "^3.0.5"
