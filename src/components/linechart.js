@@ -11,7 +11,7 @@ const LineChart = ({ data }) => {
             chartRef.current.innerHTML = ''
         }
 
-        const margin = { top: 20, right: 20, bottom: 30, left: 50 }
+        const margin = { top: 20, right: 20, bottom: 30, left: 100 }
         const width = winWidth - margin.left - margin.right
         const height = 500 - margin.top - margin.bottom
 
