@@ -1,42 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400,700&display=swap');
 
-.hero{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    padding: 0.5rem;
-    background-color: #f8f8f8;
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-}
-
+/* FONTS */
 h1{
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #333;
 }
 
 h2{
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #333;
 }
 
-.axis-label{
+h3 {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 0.8rem;
-    color: #333;
+    font-size: 1rem;
+    color: #e8e8e8;
+
+    span{
+        background-color: #606060;
+        padding: 0.2rem;
+    }
 }
 
-.grid line{
-    stroke: #ddd;
+/* WRAPPERS */
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+
+    h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}
+
+.body-wrapper{
+    padding: 0 0.5rem 0 0.5rem;
+
+    @media(min-width: 764px){
+        padding: 0 10rem 0 10rem;
+    } 
+}
+
+/* CHARTS */
+.chart-wrapper{
+    padding: 1rem 0 1rem 0;
+    overflow: hidden;
+    width: 100%;
+
+    .axis-label{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .note {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: rgb(99, 99, 99);
+    }
+
+    .y-axis .domain {
+        display: none;
+    }
+
+    .y-axis line{
+        stroke: #ddd;
+    }
+
+    .x-axis .domain {
+        display: none;
+    }
+
+    .chart-img{
+        width: 100px;
+        height: auto;
+        z-index: -10;
+        position: relative;
+    }
 }
 
 .tippy-label {

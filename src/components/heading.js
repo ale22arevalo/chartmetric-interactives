@@ -11,9 +11,11 @@ const Heading = ({ text, level }) => {
             headingElement = <h2>{text}</h2>;
             break;
         case 3:
-            headingElement = <h3>{text}</h3>;
+            headingElement = <h3><span>{text}</span></h3>;
             break;
-        // Add more cases for additional levels if needed
+        case 4:
+            headingElement = <p className='note'>{text}</p>
+            break
         default:
             headingElement = <h1>{text}</h1>;
             break;
