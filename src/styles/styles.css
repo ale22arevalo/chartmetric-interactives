@@ -1,34 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400,700&display=swap');
 
+
 /* FONTS */
 h1{
     font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.8rem;
-    color: #333;
+    margin: 1rem 0;
 }
 
 h2{
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #333;
+    margin: 0.75rem 0;
 }
 
 h3 {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    color: #e8e8e8;
-
-    span{
-        background-color: #606060;
-        padding: 0.2rem;
-    }
+    margin: 0.5rem 0;
 }
 
+.note {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: rgb(99, 99, 99);
+}
+
+
 /* WRAPPERS */
+body{
+    cursor: url('https://img.icons8.com/?size=30&id=42491&format=png&color=000000'), default;
+}
+
 .hero{
     display: flex;
     justify-content: center;
@@ -43,6 +51,11 @@ h3 {
     }
 }
 
+.heading{
+    margin: 1rem 0;
+    min-height: 2rem;
+}
+
 .body-wrapper{
     padding: 0 0.5rem 0 0.5rem;
 
@@ -51,7 +64,27 @@ h3 {
     } 
 }
 
+.instructions{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border:3px solid #9c0000;
+
+    img{
+        width: 1rem;
+        height: 1rem;
+        /* top | right | bottom | left */
+        margin: 0.5rem 0.5rem 0 0;
+    }
+}
+
+
 /* CHARTS */
+.bubble-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 .chart-wrapper{
     padding: 1rem 0 1rem 0;
     overflow: hidden;
@@ -61,14 +94,7 @@ h3 {
         font-family: 'Inter', sans-serif;
         font-weight: 400;
         font-size: 1rem;
-        color: #333;
-    }
-
-    .note {
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        font-size: 0.8rem;
-        color: rgb(99, 99, 99);
+        color: #8d8d8d;
     }
 
     .y-axis .domain {
@@ -93,6 +119,6 @@ h3 {
 
 .tippy-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #333;
 }

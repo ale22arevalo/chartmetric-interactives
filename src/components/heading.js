@@ -1,7 +1,7 @@
 import React from 'react'
-import * as styles from '../styles/styles.css'
+import hoverIcon from '../images/hover-icon.svg'
 
-const Heading = ({ text, level }) => {
+const Heading = ({ text, level, type }) => {
     let headingElement;
     switch (level) {
         case 1:
@@ -11,7 +11,7 @@ const Heading = ({ text, level }) => {
             headingElement = <h2>{text}</h2>;
             break;
         case 3:
-            headingElement = <h3><span>{text}</span></h3>;
+            headingElement = <h3>{type === 'instructions' ? <div><span className='instructions'><img src={hoverIcon}></img>{text}</span></div> : {text}}</h3>;
             break;
         case 4:
             headingElement = <p className='note'>{text}</p>
@@ -22,7 +22,7 @@ const Heading = ({ text, level }) => {
     }
 
     return (
-        <div className={styles.heading}>
+        <div className='heading'>
             {headingElement}
         </div>
     );

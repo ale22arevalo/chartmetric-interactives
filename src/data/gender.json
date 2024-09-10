@@ -1,0 +1,46 @@
+{
+    "name": "Gender Identities",
+    "children": [
+      {
+        "name": "Male",
+        "children": [
+          { "name": "Post Malone", "value": 1 },
+          { "name": "Drake", "value": 1 },
+          { "name": "Justin Bieber", "value": 1 },
+          { "name": "Ed Sheeran", "value": 1 },
+          { "name": "Kanye West", "value": 1 },
+          { "name": "Travis Scott", "value": 1 },
+          { "name": "Bruno Mars", "value": 1 },
+          { "name": "Shawn Mendes", "value": 1 },
+          { "name": "Harry Styles", "value": 1 },
+          { "name": "The Weeknd", "value": 1 }
+        ]
+      },
+      {
+        "name": "Female",
+        "children": [
+          { "name": "Adele", "value": 1 },
+          { "name": "Taylor Swift", "value": 1 },
+          { "name": "Beyoncé", "value": 1 },
+          { "name": "Billie Eilish", "value": 1 },
+          { "name": "Rihanna", "value": 1 },
+          { "name": "Dua Lipa", "value": 1 },
+          { "name": "Ariana Grande", "value": 1 },
+          { "name": "Halsey", "value": 1 },
+          { "name": "Lady Gaga", "value": 1 },
+          { "name": "Lizzo", "value": 1 },
+          { "name": "SZA", "value": 1 },
+          { "name": "Katy Perry", "value": 1 }
+        ]
+      },
+      {
+        "name": "Non-Binary",
+        "children": [
+          { "name": "Sam Smith", "value": 1 },
+          { "name": "Janelle Monáe", "value": 1 },
+          { "name": "LP (Laura Pergolizzi)", "value": 1 }
+        ]
+      }
+    ]
+  }
+  

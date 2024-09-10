@@ -1,4 +1,5 @@
 import * as React from "react";
+import "../styles/styles.css";
 import LineChart from '../components/charts/linechart';
 import BubbleChart from "../components/charts/bubblechart";
 import Heading from '../components/heading';
@@ -15,6 +16,10 @@ const metric = 'Spotify Monthly Listeners';
 const date = 'as of Sep. 6'
 const note = 'Chart: Alejandra Arevalo | Data: Spotify'
 const symbol = 'star'
+const symbolColor = '#9c0000'
+
+const bubbleTitle = 'Artist Demographics';
+const bubbleMetric = 'Top 100 artists by Spotify Monthly Listeners';
 
   return (
     <main>
@@ -30,12 +35,13 @@ const symbol = 'star'
           date = {date}
           note = {note}
           lineColor={"steelblue"}
+          symbolColor={symbolColor}
           symbol={symbol}
         />
         <BubbleChart 
           data={data} 
-          title={title} 
-          metric={metric}
+          title={bubbleTitle} 
+          metric={bubbleMetric}
           date = {date}
           note = {note}
           lineColor={"steelblue"}
