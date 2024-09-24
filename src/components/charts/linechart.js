@@ -4,6 +4,7 @@ import Heading from '../../components/heading';
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import 'tippy.js/themes/light-border.css';
+import ladygaga from '../../images/ladygaga.png';
 
 const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, symbol }) => {
 

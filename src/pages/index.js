@@ -11,9 +11,9 @@ const IndexPage = () => {
     value: item['Monthly Listeners']
   }));
 
-const title = 'Lady Gaga';
+const title = 'Ariana Grande';
 const metric = 'Spotify Monthly Listeners';
-const date = 'as of Sep. 6'
+const date = 'as of Sep. 10'
 const note = 'Chart: Alejandra Arevalo | Data: Spotify'
 const symbol = 'star'
 const symbolColor = '#9c0000'

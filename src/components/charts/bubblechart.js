@@ -39,7 +39,7 @@ const BubbleChart = ({ title, metric, date, note }) => {
             .attr('xlink:href', gradient)
             .attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
-            .attr('x', 0)
+            .attr('x', -30)
             .attr('y', 0);
 
         console.log("Data:", data);
