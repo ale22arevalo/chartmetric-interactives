@@ -4,9 +4,8 @@ import Heading from '../../components/heading';
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import 'tippy.js/themes/light-border.css';
-import ladygaga from '../../images/ladygaga.png';
 
-const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, symbol }) => {
+const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, symbol, textColor, image }) => {
 
     const chartRef = useRef();
     const [winWidth, setWinWidth] = useState(0);
@@ -23,7 +22,7 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
         const paddingLeft = parseFloat(style.paddingLeft);
         const paddingRight = parseFloat(style.paddingRight);
 
-        const margin = { top: 20, right: 50, bottom: 30, left: 60 };
+        const margin = { top: 20, right: 80, bottom: 30, left: 55 };
         const width = winWidth - margin.left - margin.right - paddingLeft - paddingRight;
         const height = 500 - margin.top - margin.bottom;
 
@@ -50,11 +49,12 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
             .attr('class', 'x-axis')
             .selectAll('text')
             .attr('class', 'axis-label')
+            .attr('style', `color: ${textColor}`)
             .attr("y", 10);
 
         // Y AXIS
         const y = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.value)])
+            .domain([d3.min(data, d => d.value), d3.max(data, d => d.value)])
             .range([height, 0]);
 
         svg.append('g')
@@ -83,6 +83,7 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
             .attr('transform', 'translate(-10, 0)')
             .selectAll('text')
             .attr('class', 'axis-label')
+            .attr('style', `color: ${textColor}`)
             .attr('x', -10)
             .attr('stroke', 'none');
 
@@ -95,6 +96,17 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
             .attr('d', d3.line()
                 .x(d => x(d.date))
                 .y(d => y(d.value))
+            );
+
+        // AREA UNDER THE LINE
+        svg.append('path')
+            .datum(data)
+            .attr('fill', lineColor)
+            .attr('fill-opacity', 0.1)
+            .attr('d', d3.area()
+            .x(d => x(d.date))
+            .y0(y(d3.min(data, d => d.value)))
+            .y1(d => y(d.value))
             );
 
         // DATA DOTS
@@ -158,12 +170,13 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
     });
 
     return (
-        <div className='chart-wrapper'>
-            <Heading level={1} text={title} />
-            <Heading level={2} text={metric + ", " + date} />
+        <div className='chart-wrapper' style={{ position: 'relative' }}>
+            <Heading level={1} text={title} textColor={textColor} />
+            <Heading level={2} text={metric + ", " + date} textColor={textColor}/>
             <Heading level={3} text={"Hover over the chart to see the data points"} type={'instructions'}/>
+            <img src={image} alt={title} style={{ position: 'absolute', top: '200px', left: '150px', width: '300px', zIndex: 100 }} />
             <div ref={chartRef}></div>
-            <Heading level={4} text={note} />
+            <Heading level={4} text={note} textColor={textColor}/>
         </div>
     );
 };

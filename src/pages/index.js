@@ -3,18 +3,19 @@ import "../styles/styles.css";
 import LineChart from '../components/charts/linechart';
 import BubbleChart from "../components/charts/bubblechart";
 import Heading from '../components/heading';
-import ladygaga from '../data/ladygaga.json';
+import badbunny from '../data/badbunny.json';
+import badbunnyphoto from '../images/badbunny.png';
 
 const IndexPage = () => {
-  const data = ladygaga.map(item => ({
-    date: new Date(item.Date),
+  const data = badbunny.map(item => ({
+    date: new Date(item.Date.replace(/(\d{2})\/(\d{2})\/(\d{4})/, '$3-$1-$2')),
     value: item['Monthly Listeners']
   }));
 
-const title = 'Ariana Grande';
-const metric = 'Spotify Monthly Listeners';
-const date = 'as of Sep. 10'
-const note = 'Chart: Alejandra Arevalo | Data: Spotify'
+const title = 'Bad Bunny';
+const metric = 'Spotify monthly listeners';
+const date = 'Aug. 20, 2024 to Jan. 15, 2025'
+const note = 'Chart: Alejandra Arevalo | Data: Chartmetric'
 const symbol = 'star'
 const symbolColor = '#9c0000'
 
@@ -28,16 +29,20 @@ const bubbleMetric = 'Top 100 artists by Spotify Monthly Listeners';
       </div>
       <div className="body-wrapper">
         <Heading level={2} text={"A library of interactive charts following the aesthetic of HMC"} />
-        <LineChart 
-          data={data} 
-          title={title} 
-          metric={metric}
-          date = {date}
-          note = {note}
-          lineColor={"steelblue"}
-          symbolColor={symbolColor}
-          symbol={symbol}
-        />
+        <div style={{backgroundColor: '#3F8FC2', padding: '1rem', borderRadius: '10px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'}}>
+          <LineChart 
+            data={data} 
+            title={title} 
+            metric={metric}
+            date = {date}
+            note = {note}
+            lineColor={"black"}
+            symbolColor={symbolColor}
+            symbol={symbol}
+            textColor={"#FFFAEE"}
+            image={badbunnyphoto}
+          />
+        </div>
         <BubbleChart 
           data={data} 
           title={bubbleTitle} 
