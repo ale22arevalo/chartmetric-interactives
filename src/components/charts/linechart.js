@@ -18,7 +18,7 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
 
         // Get the padding values of the .body-wrapper element
         const bodyWrapper = document.querySelector('.body-wrapper');
-        const style = getComputedStyle(bodyWrapper);
+        const style = bodyWrapper ? getComputedStyle(bodyWrapper) : { paddingLeft: '0', paddingRight: '0' };
         const paddingLeft = parseFloat(style.paddingLeft);
         const paddingRight = parseFloat(style.paddingRight);
 
@@ -41,7 +41,7 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
         svg.append('g')
             .attr('transform', `translate(0, ${height})`)
             .call(d3.axisBottom(x)
-                .tickValues(data.map(d => d.date).filter((i, index) => index % Math.ceil(data.length / 5) === 0))
+                .tickValues(data.map(d => d.date).filter((_, index) => index % Math.ceil(data.length / 5) === 0))
                 .tickFormat(d3.timeFormat('%b' + '. ' + '%d'))
                 .ticks(5)
                 .tickSize(0)
@@ -130,9 +130,9 @@ const LineChart = ({ data, title, metric, date, note, lineColor, symbolColor, sy
                 .attr('stroke-width', 2);
         }
 
-        dots.on('mouseover', function (event, d) {
+        dots.on('mouseover', function () {
             d3.select(this).attr('opacity', 1);
-        }).on('mouseout', function (event, d) {
+        }).on('mouseout', function () {
             d3.select(this).attr('opacity', 0);
         });
 

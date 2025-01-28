@@ -90,6 +90,7 @@ body{
     padding: 1rem;
     overflow: hidden;
     width: 100%;
+    background-color: #FE7225;
 
     .axis-label{
         font-family: 'Inter', sans-serif;
